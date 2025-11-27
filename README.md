@@ -1,6 +1,6 @@
 # A/B Test Interactive Line Chart
 
-Live demo: https://yourusername.github.io/your-repo-name
+Live demo: https://grigorytabachkov.github.io/ab-test-chart/
 
 Features:
 - Conversion rate line chart with 3 variations
@@ -16,7 +16,7 @@ Features:
 
 ## Setup
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/GrigoryTabachkov/ab-test-chart.git
 cd your-repo-name
 npm install
 npm run dev
