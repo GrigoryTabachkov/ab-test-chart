@@ -1,0 +1,127 @@
+/* src/components/Controls.module.css */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  background: var(--controls-bg, #f5f5f5);
+  border-radius: 16px;
+  margin: 1rem auto;
+  max-width: 1300px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  font-family: system-ui, sans-serif;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 180px;
+}
+
+.group strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  opacity: 0.9;
+}
+
+.group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #3b3b3b;
+  cursor: pointer;
+}
+
+.group button {
+  padding: 0.6rem 1rem;
+  border: 1.5px solid #ccc;
+  background: transparent;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: inherit; /* ← this is key */
+}
+
+/* Light mode: force dark text */
+:global(.app.light) .group button {
+  color: #1a1a1a;
+}
+
+/* Dark mode: keep light text (already from inherit) */
+:global(.app.dark) .group button {
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+/* Active state */
+.group button.active {
+  background: #7e7e7e;
+  color: white;
+  border-color: #7e7e7e;
+}
+
+.group button:hover {
+  border-color: #3b3b3b;
+  background: rgba(0, 102, 255, 0.05);
+}
+
+/* .group button.active {
+  background: #3b3b3b;
+  color: rgb(0, 0, 0);
+  border-color: #3b3b3b;
+} */
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+:global(.app.dark) .controls {
+  --controls-bg: #1e1e1e;
+  background: #1e1e1e;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+:global(.app.dark) .group button {
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+:global(.app.dark) .group button:hover {
+  background: rgba(0, 102, 255, 0.15);
+  border-color: #3b3b3b;
+}
+
+@media (max-width: 900px) {
+  .controls {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .group {
+    width: 100%;
+    align-items: center;
+  }
+}
